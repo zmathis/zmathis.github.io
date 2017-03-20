@@ -2,72 +2,63 @@
 <html>
 
   <head>
+<style>
+.dropbtn {
+    background-color: #2bf4bf ;
+    color: white;
+    padding: 16px;
+    font-size: 1px;
+    border: none;
+    cursor: pointer;
+}
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+.dropbtn:hover, .dropbtn:focus {
+    background-color: white;
+}
 
-  <title>Simple Web Typesetting</title>
-
-  <link href="simple-type.css" rel="stylesheet" type="text/css" />
-  <style>
-  .dropbtn {
-      background-color: #2bf4bf ;
-      color: white;
-      padding: 16px;
-      font-size: 1px;
-      border: none;
-      cursor: pointer;
-  }
-
-  .dropbtn:hover, .dropbtn:focus {
-      background-color: Wwhite;
-  }
-
-  .dropdown {
-      float: right;
-      position: fixed;
-      display: inline-block;
-      padding-left: 5em;
-      width: 1px;
-      
-  }
-
-  .dropdown-content {
-      display: none;
-      position: absolute;
-      min-width: 1px;
-      overflow: auto;
-      z-index: 1;
-      padding-left: 5px;
-  }
-
-  .dropdown-content a {
-      color: white;
-      padding: 0.5px 1px;
-      text-decoration: none;
-      display: block;
-      font-family:"Open Sans"; sans-serif;
-
-  }
-
-  .dropdown a:hover {background-color: #f1f1f1}
-
-  .show {display:block;}
-  </style>
-</head>
-
+.dropdown {
+    float: right;
+    position: fixed;
+    display: inline-block;
+    padding-left: 5em;
+    width: 1px;
     
-   
-  <body bgcolor="#000000">
+}
 
-  <h2>Aligned Dropdown Content</h2>
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: .01px;
+    overflow: auto;
+    right: 1px;
+    z-index: 1;
+    padding-left: 16px;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 6px;
+    text-decoration: none;
+    display: block;
+    font-family:"Open Sans"; sans-serif;
+
+}
+
+.dropdown a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+</style>
+</head>
+<body>
+
+<h2>Aligned Dropdown Content</h2>
 <p>Use <strong>float: left</strong> on the dropdown class to float the dropdown menu to the right, and <strong>left:0</strong> on the dropdown-content if you want the dropdown content to go from right to left.</p>
 
 <div class="dropdown">
 <button onclick="myFunction()" class="dropbtn"></button>
   <div id="myDropdown" class="dropdown-content">
-    <a href="#home">H</a>
-    <a href="#Preface">P</a>
+    <a href="#home">Home</a>
+    <a href="#Preface">Preface</a>
     <a href="#1">1</a>
     <a href="#2">2</a>
     <a href="#3">3</a>
@@ -83,37 +74,66 @@
     <a href="#13">13</a>
     <a href="#14">14</a>
     <a href="#14">15</a>
-    <a href="#Epilogue">E</a>
+    <a href="#Epilogue">Epilogue</a>
     
   </div>
 </div>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Simple Web Typesetting</title>
+
+    <link href="simple-type.css" rel="stylesheet" type="text/css" />
+   
+  <body bgcolor="#000000">
 
   <div class="wrapper">
     <!-- https://www.marxists.org/reference/subject/philosophy/works/ge/benjamin.htm -->
     <article>
       <header class="row">
       <a name="home">
-        <h1 class="col-2 col-10">The Work of Art in the Age of Mechanical Reproduction</h1>
+        <h1 class="col-offset-1 col-10">The Work of Art in the Age of Mechanical Reproduction</h1>
         </a>
         <p class="col-offset-1 col-10">Walter Benjamin</p>
         <p class="green col-offset-1 col-10">1936</p>
       </header>
-<div class="row">
+
       <blockquote class="white col-offset-1 col-10">
         “Our fine arts were developed, their types and uses were established, in times very different from the present, by men whose power of action upon things was insignificant in comparison with ours. But the amazing growth of our techniques, the adaptability and precision they have attained, the ideas and habits they are creating, make it a certainty that profound changes are impending in the ancient craft of the Beautiful. In all the arts there is a physical component which can no longer be considered or treated as it used to be, which cannot remain unaffected by our modern knowledge and power. For the last twenty years neither matter nor space nor time has been what it was from time immemorial. We must expect great innovations to transform the entire technique of the arts, thereby affecting artistic invention itself and perhaps even bringing about an amazing change in our very notion of art.”
         <p>Paul Valéry, <cite>Pièces sur L’Art</cite>, 1931</p>
         <p>Le Conquete de l’ubiquite</p>
       </blockquote>
-  </div>
-  </article>
-  
-  <a name="Preface">
-      <div class="jumbotron imageone"></div>
-      </a>
-  
-  <article>
+
       <section class="row">
-        <p class="col-1 col-offset-2 col-10">
+      <a name="Preface">
+      <h2 class="col-2">Preface</h2>
+        </a>
+        <p class="col-1 col-10">
           When Marx undertook his critique of the capitalistic mode of production, this mode was in its infancy. Marx directed his efforts in such a way as to give them prognostic value. He went back to the basic conditions underlying capitalistic production and through his presentation showed what could be expected of capitalism in the future. The result was that one could expect it not only to exploit the proletariat with increasing intensity, but ultimately to create conditions which would make it possible to abolish capitalism itself.
         </p>
         <p class="col-1 col-offset-2 col-10">
@@ -214,14 +234,12 @@
           The nineteenth-century dispute as to the artistic value of painting versus photography today seems devious and confused. This does not diminish its importance, however; if anything, it underlines it. The dispute was in fact the symptom of a historical transformation the universal impact of which was not realized by either of the rivals. When the age of mechanical reproduction separated art from its basis in cult, the semblance of its autonomy disappeared forever. The resulting change in the function of art transcended the perspective of the century; for a long time it even escaped that of the twentieth century, which experienced the development of the film. Earlier much futile thought had been devoted to the question of whether photography is an art. The primary question – whether the very invention of photography had not transformed the entire nature of art – was not raised. Soon the film theoreticians asked the same ill-considered question with regard to the film. But the difficulties which photography caused traditional aesthetics were mere child’s play as compared to those raised by the film. Whence the insensitive and forced character of early theories of the film. Abel Gance, for instance, compares the film with hieroglyphs: “Here, by a remarkable regression, we have come back to the level of expression of the Egyptians ... Pictorial language has not yet matured because our eyes have not yet adjusted to it. There is as yet insufficient respect for, insufficient cult of, what it expresses.” Or, in the words of Séverin-Mars: “What art has been granted a dream more poetical and more real at the same time! Approached in this fashion the film might represent an incomparable means of expression. Only the most high-minded persons, in the most perfect and mysterious moments of their lives, should be allowed to enter its ambience.” Alexandre Arnoux concludes his fantasy about the silent film with the question: “Do not all the bold descriptions we have given amount to the definition of prayer?” It is instructive to note how their desire to class the film among the “arts” forces these theoreticians to read ritual elements into it – with a striking lack of discretion. Yet when these speculations were published, films like L’Opinion publique and The Gold Rush had already appeared. This, however, did not keep Abel Gance from adducing hieroglyphs for purposes of comparison, nor Séverin-Mars from speaking of the film as one might speak of paintings by Fra Angelico. Characteristically, even today ultrareactionary authors give the film a similar contextual significance – if not an outright sacred one, then at least a supernatural one. Commenting on Max Reinhardt’s film version of A Midsummer Night’s Dream, Werfel states that undoubtedly it was the sterile copying of the exterior world with its streets, interiors, railroad stations, restaurants, motorcars, and beaches which until now had obstructed the elevation of the film to the realm of art. “The film has not yet realized its true meaning, its real possibilities ... these consist in its unique faculty to express by natural means and with incomparable persuasiveness all that is fairylike, marvelous, supernatural.”
         </p>
       </section>
-      </article>
-      <a name="8">
-        <div class="jumbotron imagetwo"></div>
-        </a>
 
-      <article>
+      <a name="8">
       <section class="row">
-        <p class="col-1 col-offset-2 col-10">
+        <h2 class="col-1">8</h2>
+        </a>
+        <p class="col-1 col-offset-1 col-10">
           The artistic performance of a stage actor is definitely presented to the public by the actor in person; that of the screen actor, however, is presented by a camera, with a twofold consequence. The camera that presents the performance of the film actor to the public need not respect the performance as an integral whole. Guided by the cameraman, the camera continually changes its position with respect to the performance. The sequence of positional views which the editor composes from the material supplied him constitutes the completed film. It comprises certain factors of movement which are in reality those of the camera, not to mention special camera angles, close-ups, etc. Hence, the performance of the actor is subjected to a series of optical tests. This is the first consequence of the fact that the actor’s performance is presented by means of a camera. Also, the film actor lacks the opportunity of the stage actor to adjust to the audience during his performance, since he does not present his performance to the audience in person. This permits the audience to take the position of a critic, without experiencing any personal contact with the actor. The audience’s identification with the actor is really an identification with the camera. Consequently the audience takes the position of the camera; its approach is that of testing. This is not the approach to which cult values may be exposed.
         </p>
       </section>
@@ -295,10 +313,8 @@
         </p>
       </section>
 
-      <a name="14">
       <section class="row">
         <h2 class="col-1">14</h2>
-        </a>
         <p class="col-1 col-offset-1 col-10">
           One of the foremost tasks of art has always been the creation of a demand which could be fully satisfied only later. The history of every art form shows critical epochs in which a certain art form aspires to effects which could be fully obtained only with a changed technical standard, that is to say, in a new art form. The extravagances and crudities of art which thus appear, particularly in the so-called decadent epochs, actually arise from the nucleus of its richest historical energies. In recent years, such barbarisms were abundant in Dadaism. It is only now that its impulse becomes discernible: Dadaism attempted to create by pictorial – and literary – means the effects which the public today seeks in the film.
         </p>
@@ -310,10 +326,8 @@
         </p>
       </section>
 
-      <a name="15">
       <section class="row">
         <h2 class="col-1">15</h2>
-        </a>
         <p class="col-1 col-offset-1 col-10">
           The mass is a matrix from which all traditional behavior toward works of art issues today in a new form. Quantity has been transmuted into quality. The greatly increased mass of participants has produced a change in the mode of participation. The fact that the new mode of participation first appeared in a disreputable form must not confuse the spectator. Yet some people have launched spirited attacks against precisely this superficial aspect. Among these, Duhamel has expressed himself in the most radical manner. What he objects to most is the kind of participation which the movie elicits from the masses. Duhamel calls the movie “a pastime for helots, a diversion for uneducated, wretched, worn-out creatures who are consumed by their worries a spectacle which requires no concentration and presupposes no intelligence which kindles no light in the heart and awakens no hope other than the ridiculous one of someday becoming a ‘star’ in Los Angeles.” Clearly, this is at bottom the same ancient lament that the masses seek distraction whereas art demands concentration from the spectator. That is a commonplace.
         </p>
@@ -327,16 +341,9 @@
           The distracted person, too, can form habits. More, the ability to master certain tasks in a state of distraction proves that their solution has become a matter of habit. Distraction as provided by art presents a covert control of the extent to which new tasks have become soluble by apperception. Since, moreover, individuals are tempted to avoid such tasks, art will tackle the most difficult and most important ones where it is able to mobilize the masses. Today it does so in the film. Reception in a state of distraction, which is increasing noticeably in all fields of art and is symptomatic of profound changes in apperception, finds in the film its true means of exercise. The film with its shock effect meets this mode of reception halfway. The film makes the cult value recede into the background not only by putting the public in the position of the critic, but also by the fact that at the movies this position requires no attention. The public is an examiner, but an absent-minded one.
         </p>
       </section>
-      </article>
-     
-      <a name="Epilogue">
 
-      <div class="jumbotron imagethree"></div>
-
-      </a>
-
-      <article>
       <section class="row">
+        <h2 class="col-2">Epilogue</h2>
         <p class="col-1 col-offset-2 col-10">
           The growing proletarianization of modern man and the increasing formation of masses are two aspects of the same process. Fascism attempts to organize the newly created proletarian masses without affecting the property structure which the masses strive to eliminate. Fascism sees its salvation in giving these masses not their right, but instead a chance to express themselves. The masses have a right to change property relations; Fascism seeks to give them an expression while preserving property. The logical result of Fascism is the introduction of aesthetics into political life. The violation of the masses, whom Fascism, with its Führer cult, forces to their knees, has its counterpart in the violation of an apparatus which is pressed into the production of ritual values.
         </p>
@@ -355,35 +362,9 @@
       </section>
 
       <footer>
-        <small>Get the original info from! "https://www.marxists.org/reference/subject/philosophy/works/ge/benjamin.htm</a>. Created for Graphic Design 2, Spring 2016, Typographic Hierarchy Project.</small>
+        <small>Text taken from <a href="https://www.marxists.org/reference/subject/philosophy/works/ge/benjamin.htm">https://www.marxists.org/reference/subject/philosophy/works/ge/benjamin.htm</a>. Created for Graphic Design 2, Spring 2016, Typographic Hierarchy Project.</small>
       </footer>
     </article>
   </div>
   </body>
-
-
-
-
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-</script>
 </html>

@@ -41,7 +41,7 @@ article header {
   margin-bottom: 2rem;
 }
 header p {
-  font-size: 2em;
+  font-size: 1em;
   font-weight: 900;
   line-height: -10%;
   text-align: right;
@@ -131,26 +131,6 @@ header nav ul li {
   padding: 1em;
 }
 
-.jumbotron {
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center center;
-    height: 90vh;
-    margin: 0;
-    width: 100%;
-    left: 0;
-}
-
-.imageone {
-  background-image: url(MyBoyMarx-03.jpg);
-}
-.imagetwo {
-  background-image: url(8-03.jpg)
-}
-.imagethree {
-  background-image: url(epilogue-03.jpg)
-}
 /** columns **/
 
 [class*='col-'] {
@@ -271,6 +251,23 @@ body {
   .col-offset-10 { margin-left: calc( 100% / 12 * 10 );}
   .col-offset-11 { margin-left: calc( 100% / 12 * 11 );}
   .col-offset-12 { margin-left: calc( 100% / 12 * 12 );}
+
+.jumbotron {
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    height: 90vh;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+.imageone {
+  background-image: url(img/karl_marx-2.jpg);
+
 }
 
 
