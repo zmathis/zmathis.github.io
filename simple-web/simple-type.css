@@ -238,7 +238,14 @@ body {
   }
 
 }
-
+.face{
+  background-image: url('img/me.png');
+  height: 90vh ;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  position: relative;
+  background-position: 127%
+}
 
 
 @media (min-width: 900px) {
